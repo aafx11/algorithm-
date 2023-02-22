@@ -1,0 +1,21 @@
+<script>
+  /* 
+  给定一个已排序的链表的头 head ， 删除所有重复的元素，使每个元素只出现一次 。返回 已排序的链表 。
+   */
+  /**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+  // 因为是有序链表，只需要前后比较
+  var deleteDuplicates = function (head) {
+    let curr = head
+    while (curr !== null && curr.next !== null) {
+      if (curr.val === curr.next.val) {
+        curr.next = curr.next.next
+      } else {
+        curr = curr.next
+      }
+    }
+    return head
+  };
+</script>
